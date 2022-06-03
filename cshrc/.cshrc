@@ -40,13 +40,9 @@ alias 51 'ssh -X jtls51@radagast'
 alias 60 'ssh -X jtls60@radagast'
 alias 61 'ssh -X jtls61@radagast'
 
-#alias sshweb 'ssh -Y -oPort=60906 Pierson@10.254.10.28'
 alias sshweb '/home/eric/scripts/ssh_to_website.sh'
-#alias sftpweb 'sftp -oPort=60906 Pierson@10.254.10.28'
 alias sftpweb '/home/eric/scripts/sftp_to_website.sh'
-
-# scp a file to the website
-alias scpweb 'scp -P 60906 \!:1 Pierson@10.254.10.28:/home/Pierson'
+alias scpweb '/home/eric/scripts/scp_to_website.sh'
 
 #Setup emacs
 setenv EMACS_USER_DIRECTORY /home/eric/.emacs.d
