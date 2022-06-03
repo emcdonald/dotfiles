@@ -1,0 +1,64 @@
+#!/bin/csh -f
+
+# Only stuff that should only be done from a jtlsXYZ account should
+# be in this file. More generic things should be in a personal
+# .cshrc
+
+# Load my own cshrc and aliases
+source /home/eric/.cshrc
+
+# Set config directory to load from my home
+#setenv XDG_CONFIG_HOME /home/eric/.config
+#setenv XDG_DATA_HOME /home/eric/.local/share
+
+# Directory shortcuts
+alias cpp50  'cd /home/eric/eclipse/workspaces/jtls50/cpp'
+alias cpp51  'cd /home/eric/eclipse/workspaces/jtls51/cpp'
+alias cpp60 'cd /home/eric/vscode/workspaces/jtls60/cpp/'
+alias cpp61 'cd /home/eric/vscode/workspaces/jtls61/cpp/'
+alias cpp62 'cd /home/eric/vscode/workspaces/jtlsgo/cpp/'
+alias java50 'cd /home/eric/eclipse/workspaces/jtls50/java'
+alias java51 'cd /home/eric/eclipse/workspaces/jtls51/java'
+alias java60 'cd /home/eric/eclipse/workspaces/jtls60/java'
+alias java61 'cd /home/eric/eclipse/workspaces/jtls61/java'
+alias js61 'cd /home/eric/vscode/workspaces/jtls61/js/'
+alias vscode 'cd /home/eric/vscode/workspaces/'
+
+# File shortcuts
+alias ejdsp 'vi ~/src/lib/jds_protocol/jds_protocol.xml'
+
+# IDE setup
+alias eclipse '/home/eric/applications/eclipse/eclipse'
+alias code "set user=`whoami` ; \code --user-data-dir /home/eric/vscode/dotVSCode_$user --extensions-dir /home/eric/vscode/dotVSCode_$user/extensions --no-xshm"
+
+#Eclipse (compiled under Centos6) is upset running on Centos7
+# temp fixes for error/warning messages
+#setenv NO_AT_BRIDGE 1
+#setenv SWT_GTK3 0
+#alias eclipse 'setenv SWT_GTK3 0; \eclipse'
+
+
+
+
+# Colors!
+#set       red="%{\033[1;31m%}"
+#set     green="%{\033[1;32m%}"
+#set    yellow="%{\033[1;33m%}"
+#set      blue="%{\033[1;34m%}"
+#set   magenta="%{\033[1;35m%}"
+#set      cyan="%{\033[1;36m%}"
+#set     white="%{\033[0;37m%}"
+#set whiteBold="%{\033[1;37m%}"
+#set       end="%{\033[0m%}" # This is needed at the end... :(
+
+
+#set prompt="${green}%n${blue}@%m ${white}%~ ${green}%%${end} "
+#set prompt="${white}[${cyan}%n${whiteBold}@${blue}%m ${white}%~]${end} "
+
+# Clean up after ourselves...
+#unset red green yellow blue magenta cyan yellow white end
+
+#set prompt="`hostname -s`:%B`whoami`%b$ "
+#set prompt="[%B%n%b@%m %c] "
+
+#setenv LS_COLORS 'rs=0:di=01;95:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;95:ow=34;95:st=37;95:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
