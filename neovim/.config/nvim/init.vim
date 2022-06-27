@@ -24,6 +24,8 @@ call plug#begin('/home/eric/.local/share/nvim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
+Plug 'mhinz/vim-grepper'
+nnoremap <leader>g :Grepper<CR>
 
 " =============================================================================
 " NerdTree
@@ -99,12 +101,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'justinmk/vim-gtfo' " Go to file in browser 'gof'
-Plug 'neovim/nvim-lspconfig'
+
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig' "-- Collection of configurations for built-in LSP client
+
+Plug 'mfussenegger/nvim-jdtls'
 
 " ================================================================================
 " = Auto-Completion via nvim-cmp
 " ================================================================================
-Plug 'neovim/nvim-lspconfig' "-- Collection of configurations for built-in LSP client
 Plug 'hrsh7th/nvim-cmp' "-- Autocompletion plugin
 Plug 'hrsh7th/cmp-nvim-lsp' "-- LSP source for nvim-cmp
 Plug 'saadparwaiz1/cmp_luasnip' "-- Snippets source for nvim-cmp
@@ -196,6 +201,16 @@ set incsearch
 set nostartofline
 set tags+=.tags
 
+if !isdirectory("/home/eric/.vim/")
+    call mkdir("/home/eric/.vim/", "", 0770)
+endif
+if !isdirectory("/home/eric/.vim/undo_dir")
+    call mkdir("/home/eric/.vim/undo_dir", "", 0770)
+endif
+set undodir=/home/eric/.vim/undo_dir
+set undofile
+
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
 if has("gui_running")
    set guioptions-=T
@@ -233,7 +248,7 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprevious<CR>
 
 nnoremap <leader>w :update<CR>
-nnoremap <leader><SPACE> :noh<CR>
+nnoremap <leader>n :noh<CR>
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 
@@ -254,8 +269,8 @@ nnoremap <leader>fr :%s/\<<C-r><C-w>\>//g<left><left>
     " move highlighted lines up/down in vertical select mode
     "vnoremap J :m '>+1<CR>gv=gv
     "vnoremap K :m '<-2<CR>gv=gv
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
+vnoremap <silent> <C-k> :move-2<cr>
+vnoremap <silent> <C-j> :move+<cr>
 
 " =============================================================================
 " Language Server Protocol (LSP)
@@ -266,18 +281,19 @@ lua require('lsp-setup')
 " Automatic night-mode
 " =============================================================================
 function! LightMode()
-    set background=light
     colorscheme gruvbox
+    set background=dark
+    "set background=light
 endfunction
 
 function! DarkMode()
+    colorscheme gruvbox
     set background=dark
-    colorscheme dracula
 endfunction
 
 function! ChangeColorScheme(timer)
     let hour = system('date +%H')
-    if hour > 6 && hour < 20
+    if hour > 6 && hour < 18
         call LightMode()
     else
         call DarkMode()
