@@ -194,6 +194,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+gaps inner 15
+
 # Launch polybar instead of i3bar
 #exec_always --no-startup-id /home/eric/.config/polybar/launch.bash
 
@@ -204,7 +206,7 @@ bar {
 #        separator_symbol " "
         workspace_min_width 50
         font pango:JetBrains Mono Regular 12
-        status_command /home/eric/applications/bumblebee-status/bumblebee-status -m pasink pasource cpu memory disk battery date time \
+        status_command /home/eric/applications/bumblebee-status/current/bumblebee-status -m pasink pasource cpu memory disk battery date time \
        	 -p time.format="%H:%M" -t gruvbox-eric
         #status_command i3status
 
