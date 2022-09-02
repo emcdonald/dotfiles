@@ -11,6 +11,8 @@ set       end="%{\033[0m%}" # This is needed at the end
 
 #set prompt="`hostname -s`<`whoami`> "
 set prompt="${white}[${cyan}%n${whiteBold}@${blue}%m ${white}%~]${end} "
+#set prompt="${white}╭─[${cyan}%n${whiteBold}@${blue}%m${white} :: %~]\n╰─❯${end} "
+#─╭╰
 
 umask 002
 
@@ -20,11 +22,13 @@ alias ll 'ls -lh'
 alias la 'ls -ah'
 
 alias prof 'cd /home/wejteam/team/dev_support/profiles/eric'
+alias svnmeld 'svn diff --diff-cmd="/home/eric/svn/svnmeld_snip.sh"'
 
 alias sudo 'sudo env "PATH=$PATH"'
 
 setenv TERMINAL kitty
 setenv PATH /home/eric/.local/bin:$PATH
+#setenv PATH /home/eric/scripts:$PATH
 
 #sdev (teamtools) meld is broken on Centos8
 alias meld '/bin/meld'
@@ -42,6 +46,7 @@ alias 50 'ssh -X jtls50@radagast'
 alias 51 'ssh -X jtls51@radagast'
 alias 60 'ssh -X jtls60@radagast'
 alias 61 'ssh -X jtls61@radagast'
+alias 62 'ssh -X jtlsgo@radagast'
 
 alias sshweb '/home/eric/scripts/ssh_to_website.sh'
 alias sftpweb '/home/eric/scripts/sftp_to_website.sh'

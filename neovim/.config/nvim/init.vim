@@ -97,7 +97,11 @@ let g:airline_symbols.linenr = ' :'
 let g:airline_symbols.maxlinenr = '☰ '
 let g:airline_symbols.dirty='⚡'
 
+" Color theme
+Plug 'rebelot/kanagawa.nvim'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='minimalist'
+
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'justinmk/vim-gtfo' " Go to file in browser 'gof'
@@ -281,13 +285,13 @@ lua require('lsp-setup')
 " Automatic night-mode
 " =============================================================================
 function! LightMode()
-    colorscheme gruvbox
+    colorscheme kanagawa
     set background=dark
     "set background=light
 endfunction
 
 function! DarkMode()
-    colorscheme gruvbox
+    colorscheme kanagawa
     set background=dark
 endfunction
 

@@ -21,8 +21,11 @@ alias java50 'cd /home/eric/eclipse/workspaces/jtls50/java'
 alias java51 'cd /home/eric/eclipse/workspaces/jtls51/java'
 alias java60 'cd /home/eric/eclipse/workspaces/jtls60/java'
 alias java61 'cd /home/eric/eclipse/workspaces/jtls61/java'
+alias java62 'cd /home/eric/eclipse/workspaces/jtlsgo/java'
 alias js61 'cd /home/eric/vscode/workspaces/jtls61/js/'
+alias js62 'cd /home/eric/vscode/workspaces/jtlsgo/js/'
 alias vscode 'cd /home/eric/vscode/workspaces/'
+alias node62 'cd /home/eric/vscode/workspaces/jtlsgo/node_projects/'
 
 # File shortcuts
 alias ejdsp 'vi ~/src/lib/jds_protocol/jds_protocol.xml'
